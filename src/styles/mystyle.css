@@ -1,0 +1,71 @@
+.hero{
+    display:flex;
+    
+    position: fixed;
+}
+
+.logo{
+  width: 4rem; 
+  height: 2.5rem; 
+}
+
+.left-h{
+    padding: 1rem;
+    padding-left: 1.5rem ;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 90%;
+    background-color: rgba(77, 55, 55, 0);
+ }
+ .mensaje {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(77, 55, 55, 0);
+ }
+
+ .footer_menu{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    color: white;
+    justify-content: center;
+ 
+ }
+
+
+ .mensaje_footer{
+    list-style: none;
+    display: flex;
+   
+    color: white;
+    justify-content: right;
+    padding-right: 1.5rem;
+ }
+
+ .centrado_total{
+ 
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   font-size: calc(10px + 2vmin);
+   color: white;
+ }
+@media (min-width:720px){
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 97%;
+        background-color: rgba(77, 55, 55, 0);
+       
+       
+     }
+}
