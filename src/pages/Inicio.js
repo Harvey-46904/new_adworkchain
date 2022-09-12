@@ -8,7 +8,7 @@ class Inicio extends React.Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-          HOLA MUNDO Harvey
+          HOLA MUNDO STEVEN
           </p>
           <a
             className="App-link"
