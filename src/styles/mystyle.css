@@ -1,3 +1,7 @@
+body{
+  cursor: url("../assets/img/telescopio.png"), auto;
+}
+
 
 .hero{
     display:flex;
@@ -16,7 +20,8 @@
   height: 2.5rem; 
   position: fixed;
   bottom: 93%;
-  right: 95%;
+  right: 80%;
+ 
 }
 
 .left-h{
@@ -100,4 +105,12 @@
        
        
      }
+     .logo{
+      width: 4rem; 
+      height: 2.5rem; 
+      position: fixed;
+      bottom: 93%;
+      right: 93%;
+     
+    }
 }

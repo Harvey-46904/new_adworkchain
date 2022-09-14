@@ -6,6 +6,8 @@ import M2 from '../assets/img/cuarto/pared.jpg'
 import M3 from '../assets/img/cuarto/galaxia.jpg'
 import M4 from '../assets/img/cuarto/marco.jpg'
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
+import cursors from '../assets/img/nave.png'
+import cursors1 from '../assets/img/telescopio.png'
 class Tjs extends React.Component {
     
     
@@ -33,21 +35,41 @@ function Box(props) {
       </mesh>
     )
   }
+ 
+
 
   function Puerta(){
-    const mesh = useRef()
+   // useFrame((state, delta) => (mesh.current.rotation.y += 0.01))
+   let ref
+   let pos
+   
+    
+    
+   pos=[0,-0.7, 0]
+    //ref =group => group.rotateY(Math.PI/4)
+    //pos=[0,-0.7, 0.59]
+   const mesh = useRef()
     const colorMap = useLoader(TextureLoader, M1)
    
     return(
+      <group ref={ref}>
         <mesh
-        position={[0,-0.7, 0]}
-        ref={mesh}
-        onPointerEnter={(e) => alert('black')} // see note 1
-      
-        >
-            <boxGeometry args={[1.8,4,0]}  />
-            <meshStandardMaterial map={colorMap} />
-        </mesh>
+                position={pos}
+                ref={mesh}
+                onPointerEnter={(e) => 
+                  document.body.style.cursor='url('+cursors+'), auto'
+               
+                } 
+                onPointerOut={(e) =>
+                  document.body.style.cursor='url('+cursors1+'), auto'
+                
+                } // see note 1
+                >
+                    <boxGeometry args={[1.8,4,0.09]}  />
+                    <meshStandardMaterial map={colorMap} />
+                </mesh>
+      </group>
+       
     );
   }
   
@@ -75,7 +97,7 @@ function Box(props) {
         <mesh
         position={[0,-0.7, 0]}
         ref={mesh}
-        onPointerEnter={(e) => alert('black')} // see note 1
+       
       
         >
             <boxGeometry args={[1.8,4,0]}  />
@@ -98,10 +120,12 @@ function Box(props) {
  
     );
   }
+
+  
  
 return(
   <Canvas style={{height:'100vh'}}>
-     <ambientLight intensity={0.5} />
+     <ambientLight intensity={0.3} />
      
      <Pared/>
       <Marco/>
