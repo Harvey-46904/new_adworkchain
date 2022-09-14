@@ -10,13 +10,13 @@ import {
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 import '../styles/App.css'
-
+import * as THREE from 'three'
 import Img1 from '../assets/img/1.jpg'
-import Img2 from '../assets/img/fondo.jpg'
-import Img3 from '../assets/img/fondo.jpg'
-import Img4 from '../assets/img/fondo.jpg'
-import Img5 from '../assets/img/fondo.jpg'
-import Img6 from '../assets/img/fondo.jpg'
+import Img2 from '../assets/img/2.jpg'
+import Img3 from '../assets/img/3.jpg'
+import Img4 from '../assets/img/4.jpg'
+import Img5 from '../assets/img/5.jpg'
+import Img6 from '../assets/img/6.jpg'
 import Model from "../components/Model.js";
 extend({ OrbitControls });
 class Inicio extends React.Component {
@@ -45,7 +45,18 @@ class Inicio extends React.Component {
           />
         );
       };
-      
+      function Prueba () {
+   
+   
+    
+        var bola_geo = new THREE.SphereGeometry(200,50,50);
+        var bola_mat = new THREE.MeshBasicMaterial({color: 0xC8E511});
+         let bola = new THREE.Mesh(bola_geo, bola_mat);
+         Canvas.add(bola);
+          bola.scale.set(500)
+           bola.position.set(0,0,0)
+      }
+
       // Loads the skybox texture and applies it to the scene.
       function SkyBox() {
         const { scene } = useThree();
@@ -81,7 +92,7 @@ class Inicio extends React.Component {
           generateMipmaps: true,
           minFilter: LinearMipmapLinearFilter
         });
-        const cubeCamera = new CubeCamera(1, 1000, cubeRenderTarget);
+        const cubeCamera = new CubeCamera(1, 10, cubeRenderTarget);
         cubeCamera.position.set(0, 0, 0);
         scene.add(cubeCamera);
       
@@ -106,11 +117,11 @@ class Inicio extends React.Component {
 
         return ( 
           <div className="">
-            <Canvas style={{height:'100vh'}} camera={{position:[0,0,0],fov:60}} size={{width:window.innerWidth, height:window.innerHeight}}>
+            <Canvas style={{height:'100vh'}}>
             
         
             <SkyBox camera={{position:[100,10,0]}}/>
-           
+           <Sphere/>
             <CameraControls/>
             </Canvas>
           </div>
