@@ -1,17 +1,27 @@
-import React from "react"
+import React from "react";
 
-import { ThreeMFLoader} from "three/examples/jsm/loaders/3MFLoader";
 import { useLoader } from "@react-three/fiber";
-import model from "../assets/models/chair.3mf";
+
+import { ThreeMFLoader } from 'three/examples/jsm/loaders/3MFLoader';
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+
+
+import model from "../assets/models/silla/crab.3mf";
+// import model from "../assets/models/silla/ArmChair_01_4k.gltf";
 
 
 const Model = () => {
-    const geom = useLoader(ThreeMFLoader, model);
+    
+    const silla = useLoader(ThreeMFLoader, model);
+    // const silla = useLoader(GLTFLoader, model);
+    
     return (
-        <group position={[2,-1.7,2.7]} scale={[0.02,0.02,0.02]} rotation={[89.5,85,0]}>
-            <primitive object={geom}/>
+        <group>
+            <primitive object={silla} />
         </group>
     );
 };
 
 export default Model;
+
+

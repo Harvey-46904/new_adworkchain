@@ -11,17 +11,26 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 import '../styles/App.css'
 import * as THREE from 'three'
-import Img1 from '../assets/img/1.jpg'
-import Img2 from '../assets/img/2.jpg'
-import Img3 from '../assets/img/3.jpg'
-import Img4 from '../assets/img/4.jpg'
-import Img5 from '../assets/img/5.jpg'
-import Img6 from '../assets/img/6.jpg'
+import Img1 from '../assets/img/redeclipse_ft.png'
+import Img2 from '../assets/img/redeclipse_bk.png'
+import Img3 from '../assets/img/redeclipse_up.png'
+import Img4 from '../assets/img/redeclipse_dn.png'
+import Img5 from '../assets/img/redeclipse_rt.png'
+import Img6 from '../assets/img/redeclipse_lf.png'
 import Model from "../components/Model.js";
+import { Sillaverde } from "../components/Sillaverde/Sillaverde";
+import '../styles/mystyle.css'
+import Servicios from "./Servicios";
+
 extend({ OrbitControls });
+
 class Inicio extends React.Component {
 
     render() { 
+
+
+      
+
 
       const CameraControls = () => {
         // Get a reference to the Three.js Camera, and the canvas html element.
@@ -35,27 +44,28 @@ class Inicio extends React.Component {
       
         // Ref to the controls, so that we can update them on every frame using useFrame
         const controls = useRef();
+        
         useFrame(() => controls.current.update());
+        
         return (
+          
           <orbitControls
             ref={controls}
             args={[camera, domElement]}
+        //    maxAzimuthAngle={0.01}
+          //  maxPolarAngle={1}
+          //  minAzimuthAngle={1}
+          //  minPolarAngle={20}
             autoRotate={true}
-            enableZoom={true}
+            enableZoom={false}
+            enable={false}
+            enableRotate  ={false}
           />
+          
         );
+        
       };
-      function Prueba () {
-   
-   
-    
-        var bola_geo = new THREE.SphereGeometry(200,50,50);
-        var bola_mat = new THREE.MeshBasicMaterial({color: 0xC8E511});
-         let bola = new THREE.Mesh(bola_geo, bola_mat);
-         Canvas.add(bola);
-          bola.scale.set(500)
-           bola.position.set(0,0,0)
-      }
+      
 
       // Loads the skybox texture and applies it to the scene.
       function SkyBox() {
@@ -77,13 +87,13 @@ class Inicio extends React.Component {
       
         // Set the scene background property to the resulting texture.
         scene.background = texture;
-        scene.size=30;
+        scene.size=10;
         
         return null;
       }
       
       // Geometry
-      function Sphere() {
+   /*   function Sphere() {
         const { scene, gl } = useThree();
         // The cubeRenderTarget is used to generate a texture for the reflective sphere.
         // It must be updated on each frame in order to track camera movement and other changes.
@@ -112,23 +122,33 @@ class Inicio extends React.Component {
             />
           </mesh>
         );
-      }
+      }  */
       
 
         return ( 
           <div className="">
+            
             <Canvas style={{height:'100vh'}}>
             
         
             <SkyBox camera={{position:[100,10,0]}}/>
-           <Sphere/>
+            <ambientLight intensity={1.25} />
+         <ambientLight intensity={0.1} />
+         <directionalLight intensity={0.4} />
+            <Suspense fallback={null}>
+              <Sillaverde/>
+         </Suspense>
             <CameraControls/>
             </Canvas>
+            <ambientLight></ambientLight>
+            <Servicios></Servicios>
           </div>
           
 
          );
     }
+
+
 }
  
 export default Inicio;
