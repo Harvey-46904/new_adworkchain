@@ -6,6 +6,7 @@ class Servicios extends React.Component {
 
     render() { 
         return (  
+            
             <Fullpage>
             <FullpageNavigation/>
             <FullPageSections>
@@ -16,21 +17,21 @@ class Servicios extends React.Component {
                 </FullpageSection>
                 <FullpageSection style={{height:'20vh'}}>
                 <div className="centrado_total">
-                    <h1  >SOBRE NOSOTROS</h1>
+                    <h1  className="glow">SOBRE NOSOTROS</h1>
                 </div>
                 </FullpageSection>
                 <FullpageSection style={{height:'20vh'}}>
                 <div className="centrado_total">
-                    <h1 >INCUBADORAS</h1>
+                    <h1 className="glow">INCUBADORAS</h1>
                 </div>
                 </FullpageSection>
                 <FullpageSection style={{height:'100vh'}}>
                 <div className="centrado_total">
-                    <h1 >CONTÁCTANOS</h1>
+                    <h1 className="glow">CONTÁCTANOS</h1>
                 </div>
                 </FullpageSection>
             </FullPageSections>
-        </Fullpage>
+            </Fullpage>
             );
     }
 }

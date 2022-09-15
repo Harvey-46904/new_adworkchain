@@ -7,14 +7,11 @@ import M3 from '../assets/img/cuarto/galaxia.jpg'
 import M4 from '../assets/img/cuarto/marco.jpg'
 import Mc from '../assets/img/cuarto/cuadro.jpg'
 import { TextureLoader } from 'three/src/loaders/TextureLoader'
-<<<<<<< HEAD
 import cursors from '../assets/img/nave.png'
 import cursors1 from '../assets/img/telescopio.png'
-=======
 import Model from '../components/Model'
-import Scene from '../components/Scene'
+
 import * as THREE from 'three'
->>>>>>> origin/stevenx_2
 class Tjs extends React.Component {
     
     
@@ -42,10 +39,8 @@ function Box(props) {
       </mesh>
     )
   }
-<<<<<<< HEAD
  
 
-=======
 function Cuadro(){
   const [clicked,setClicked]=useState(false);
   const markedRef=useRef();
@@ -79,7 +74,6 @@ function Cuadro(){
  
     );
   }
->>>>>>> origin/stevenx_2
 
   function Puerta(){
    // useFrame((state, delta) => (mesh.current.rotation.y += 0.01))
@@ -89,8 +83,8 @@ function Cuadro(){
     
     
    pos=[0,-0.7, 0]
-    //ref =group => group.rotateY(Math.PI/4)
-    //pos=[0,-0.7, 0.59]
+    ref =group => group.rotateY(Math.PI/4)
+    pos=[0,-0.7, 0.59]
    const mesh = useRef()
     const colorMap = useLoader(TextureLoader, M1)
    
@@ -180,12 +174,7 @@ function Cuadro(){
 
 return(
   <Canvas style={{height:'100vh'}}>
-<<<<<<< HEAD
      <ambientLight intensity={0.3} />
-=======
-
-     <ambientLight intensity={0.5} />
->>>>>>> origin/stevenx_2
      
      <Pared/>
      <Marco/>
@@ -200,7 +189,7 @@ return(
     </Model>
     <Prueba/>
   </Suspense>
-<Scene></Scene>
+
   
     </Canvas>
    
