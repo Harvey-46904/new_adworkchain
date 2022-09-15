@@ -12,6 +12,12 @@ import cursors1 from '../assets/img/telescopio.png'
 import Model from '../components/Model'
 
 import * as THREE from 'three'
+import { LoadingSpinner } from 'video-react'
+import { LoadingManager } from 'three'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { Sillaverde } from '../components/Sillaverde/Sillaverde'
+
+
 class Tjs extends React.Component {
     
     
@@ -170,7 +176,9 @@ function Cuadro(){
      
        bola.position.set(0,0,0)
   }
-  
+ 
+
+
 
 return(
   <Canvas style={{height:'100vh'}}>
@@ -182,12 +190,11 @@ return(
      <Puerta/>
      <Cuadro/>
 
-  <Suspense>
+  <Suspense >
   
-    <Model>
-    <ambientLight/>
-    </Model>
-    <Prueba/>
+  <Sillaverde/>
+    
+
   </Suspense>
 
   
