@@ -1,10 +1,5 @@
 import React from "react";
 
-<<<<<<< HEAD
-import { ThreeMFLoader} from "three/examples/jsm/loaders/3MFLoader";
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-=======
->>>>>>> origin/stevenx_2
 import { useLoader } from "@react-three/fiber";
 
 import { ThreeMFLoader } from 'three/examples/jsm/loaders/3MFLoader';
@@ -16,15 +11,10 @@ import model from "../assets/models/silla/crab.3mf";
 
 
 const Model = () => {
-<<<<<<< HEAD
-    const geom = useLoader(ThreeMFLoader, model);
-
-=======
     
     const silla = useLoader(ThreeMFLoader, model);
     // const silla = useLoader(GLTFLoader, model);
     
->>>>>>> origin/stevenx_2
     return (
         <group>
             <primitive object={silla} />

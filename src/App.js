@@ -18,13 +18,10 @@ function App() {
       <Route path="/inicio" element={<Contenido />} />
       <Route path="/item" element={<Items />} />
       <Route path="/servicios" element={<Servicios />} />
-<<<<<<< HEAD
       <Route path="/esto" element={<ThreeScene />} />
-=======
       <Route path="/obj" element={<Model3 />} />
       <Route path="/final" element={<ModelX />} />
 
->>>>>>> origin/stevenx_2
     </Routes>
   </BrowserRouter>
   );
