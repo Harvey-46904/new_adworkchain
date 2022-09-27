@@ -9,7 +9,7 @@ export function Robot(props) {
   const { nodes, materials } = useGLTF('/robot.gltf')
   return (
     <group {...props} dispose={null}>
-      <group position={[-1.95, -2.25, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+      <group position={[0.3, -2.1, 3]} rotation={[Math.PI / 2, 0, 3.2]} scale={0.002}>
         <mesh geometry={nodes.pCylinder1.geometry} material={materials['Mat.3']} position={[188.24, 0, 130.77]} />
         <mesh geometry={nodes.pCylinder2.geometry} material={materials['Mat.3']} position={[188.24, 0, 130.77]} />
         <mesh geometry={nodes.pCylinder3.geometry} material={materials['Mat.2']} position={[188.24, 0, 130.77]} />

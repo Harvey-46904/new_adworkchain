@@ -65,13 +65,15 @@ body{
 
  .centrado_total{
    
-   min-height: 100vh;
+   min-height: 1vh;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
    font-size: calc(10px + 2vmin);
    color: white;
+   
+   
  }
 
  .centrado_sub_item{
@@ -110,22 +112,137 @@ body{
    color: black;
    font-size: 120px;
  }
-@media (min-width:720px){
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 97%;
-        background-color: rgba(77, 55, 55, 0);
-       
-       
-     }
-     .logo{
-      width: 4rem; 
-      height: 2.5rem; 
-      position: fixed;
-      bottom: 93%;
-      right: 93%;
-     
-    }
+
+
+.quieto{
+  top: 50%;
+ 
+  
+	display:inline-block;
 }
+
+.fotox{
+
+width: 20%;
+height: auto;
+position: fixed;
+transform: translate(200%, -300%);
+
+}
+
+.videox{
+
+  width: 90%;
+height: auto;
+position: fixed;
+transform: translate(5%, -300%);
+/*transform: rotateY(40deg);*/
+
+}
+.contain_db{
+  position: absolute;
+}
+.video_responsive{
+
+  width: 1600px;
+
+}
+.video_responsive_nosotros{
+
+  width: 1600px;
+
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+ Hide scrollbar for IE, Edge and Firefox 
+.body {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+} 
+
+
+.inclinar{
+
+  perspective: 1000px;
+  
+}
+
+.con-text{
+  position: absolute;
+  transform: translate(0, -80vh);
+  color: rgb(255, 255, 255, 0);
+  -webkit-text-stroke: 2px whitesmoke;
+   font-size: 7vw;
+}
+
+
+.grande{
+  width: 30%;
+  height: auto;
+  position: fixed;
+  transform: translate(120%, -250%);
+}
+
+.item_style{
+
+  color: rgb(255, 255, 255, 0);
+  -webkit-text-stroke: 2px whitesmoke;
+   font-size: 7vw;
+
+  position:absolute;
+   transform: translate(40vw, -80vh);
+   
+
+}
+
+
+
+@media (min-width:720px){
+  .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 97%;
+      background-color: rgba(77, 55, 55, 0);
+     
+     
+   }
+   .logo{
+    width: 4rem; 
+    height: 2.5rem; 
+    position: fixed;
+    bottom: 93%;
+    right: 93%;
+   
+  }
+
+
+  .videox{
+    width: 30%;
+    height: auto;
+    position: fixed;
+    transform: translate(120%, -250%);
+  }
+
+  .video_responsive{
+
+   
+
+    width: 1920px;
+  
+  }
+
+  .video_responsive_nosotros{
+  
+    height: 100vh;
+
+    width: auto;
+  
+  }
+
+
+}
+
+

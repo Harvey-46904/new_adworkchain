@@ -12,7 +12,7 @@ import cursors1 from '../assets/img/telescopio.png'
 import Model from '../components/Model'
 
 import * as THREE from 'three'
-import { LoadingSpinner } from 'video-react'
+// import { LoadingSpinner } from 'video-react'
 import { LoadingManager } from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Sillaverde } from '../components/Sillaverde/Sillaverde'
@@ -182,8 +182,10 @@ function Cuadro(){
 
 return(
   <Canvas style={{height:'100vh'}}>
-     <ambientLight intensity={0.3} />
-     
+   
+     <ambientLight intensity={0.5} />
+            <ambientLight intensity={0.1} />
+            <directionalLight intensity={0.4} />
      <Pared/>
      <Marco/>
      <Galaxia/>

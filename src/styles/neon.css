@@ -8,9 +8,9 @@
     -webkit-text-stroke-color: #000;
     -webkit-text-stroke-width: 2px;
   /* shorthand */
-    -webkit-text-stroke: 2px #000;
+    -webkit-text-stroke: 2px black;
   /* color del texto */
-    -webkit-text-fill-color: #fff;
+    -webkit-text-fill-color: aqua;
 }
   
   @keyframes glow {

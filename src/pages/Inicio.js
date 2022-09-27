@@ -1,5 +1,5 @@
 import React, { useRef, Suspense } from "react";
-import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
+import { Canvas, extend, useThree, useFrame, useLoader } from "@react-three/fiber";
 import {
   CubeTextureLoader,
   CubeCamera,
@@ -8,7 +8,7 @@ import {
   LinearMipmapLinearFilter
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-
+import { TextureLoader } from 'three/src/loaders/TextureLoader';
 import '../styles/App.css'
 import * as THREE from 'three'
 import Img1 from '../assets/img/redeclipse_ft.png'
@@ -18,9 +18,17 @@ import Img4 from '../assets/img/redeclipse_dn.png'
 import Img5 from '../assets/img/redeclipse_rt.png'
 import Img6 from '../assets/img/redeclipse_lf.png'
 import Model from "../components/Model.js";
-import { Sillaverde } from "../components/Sillaverde/Sillaverde";
+//import { Sillaverde } from "../components/Sillaverde/Sillaverde";
+import { Spaceship } from "../components/Modelos3d/Spaceship.js";
 import '../styles/mystyle.css'
 import Servicios from "./Servicios";
+//import { Purpleplanet } from "../components/Modelos3d/Purpleplanet";
+//import { Sillaverde } from "../components/Sillaverde/Sillaverde";
+import  Planet from "../components/Modelos3d/Planet";
+import img from "../assets/img/weird2.jpg"
+//import ScrollServices from "../components/ScrollServices";
+//import InicioScroll from "../components/InicioScroll";
+import InicioItems from "../components/InicioItems";
 
 extend({ OrbitControls });
 
@@ -93,7 +101,7 @@ class Inicio extends React.Component {
       }
       
       // Geometry
-   /*   function Sphere() {
+      function Sphere() {
         const { scene, gl } = useThree();
         // The cubeRenderTarget is used to generate a texture for the reflective sphere.
         // It must be updated on each frame in order to track camera movement and other changes.
@@ -110,7 +118,7 @@ class Inicio extends React.Component {
         useFrame(() => cubeCamera.update(gl, scene));
       
         return (
-          <mesh visible position={[0, 0, 0]} rotation={[0, 0, 0]} castShadow>
+          <mesh visible position={[4, 0, 5]} rotation={[0, 0, 0]} castShadow>
             <directionalLight intensity={0.5} />
             <sphereGeometry attach="geometry" args={[2, 32, 32]} />
             <meshBasicMaterial
@@ -122,26 +130,62 @@ class Inicio extends React.Component {
             />
           </mesh>
         );
-      }  */
+      }  
+
+
+      function Esfera() {
+
+        const texture = useLoader(TextureLoader, img);
+
+        return (
+          <mesh position={[-2, -3, -4]} rotation={[0, 0, 0]}>
+            <sphereGeometry attach="geometry" args={[1, 16, 16]} />
+            <meshStandardMaterial
+              attach="material"
+              map={texture}
+              color="gray"
+              transparent
+              roughness={0.1}
+              metalness={0.1}
+              autoRotate={true}
+            />
+           
+          </mesh>
+        );
+      }
+   
+
+
+
+
+
       
 
         return ( 
           <div className="">
             
             <Canvas style={{height:'100vh'}}>
-            
-        
+        <Planet/>
             <SkyBox camera={{position:[100,10,0]}}/>
             <ambientLight intensity={1.25} />
-         <ambientLight intensity={0.1} />
-         <directionalLight intensity={0.4} />
-            <Suspense fallback={null}>
-              <Sillaverde/>
-         </Suspense>
-            <CameraControls/>
+            <ambientLight intensity={0.1} />
+            <directionalLight intensity={0.4} />
+
+        <Suspense fallback={null}>
+              <Spaceship  />
+               
+              
+        </Suspense>
+             <CameraControls/> 
+            <Esfera/>
+
+
+
+
             </Canvas>
-            <ambientLight></ambientLight>
-            <Servicios></Servicios>
+
+            <InicioItems/>
+            
           </div>
           
 

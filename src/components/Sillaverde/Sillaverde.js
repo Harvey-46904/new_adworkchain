@@ -9,7 +9,7 @@ export function Sillaverde(props) {
   const { nodes, materials } = useGLTF('/sillaverde.gltf')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.GreenChair_01.geometry} material={materials.GreenChair_01} position={[5, -0.9, 0]} />
+      <mesh geometry={nodes.GreenChair_01.geometry} material={materials.GreenChair_01} position={[1.5, -1.2, 3]} />
     </group>
   )
 }

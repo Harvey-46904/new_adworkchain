@@ -1,0 +1,27 @@
+.fotos_aca{
+
+    width: 100%;
+    height: auto;
+    position: absolute;
+    transform: translate(20vw, -70vh);
+
+}
+
+.titulo_aca{
+
+    font-size: 7vw;
+    
+    color: rgb(255, 255, 255, 0);
+  -webkit-text-stroke: 2px whitesmoke;
+
+
+}
+
+.contain_aca{
+
+  width: 100%;
+  height: auto;
+  position: absolute;
+  transform: translate(0, -90vh);
+
+}

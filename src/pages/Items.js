@@ -1,16 +1,22 @@
 import React from "react";
 import { Player } from 'video-react';
-import 'video-react/dist/video-react.css'; 
+ import 'video-react/dist/video-react.css'; 
+ import video from '../assets/videos/iron.mp4'
+ import video2 from '../assets/videos/strange.mp4'
+ import video3 from '../assets/videos/thanos.mp4'
+ import video4 from '../assets/videos/spiderman.mp4'
+ import video5 from '../assets/videos/thor.mp4'
 import Fullpage ,{FullPageSections,FullpageSection,FullpageNavigation}from "@ap.cx/react-fullpage";
 class Items extends React.Component {
   
     render() { 
-
+/*
         const sub_itemes=[
             {
                 "fondo":"ulr",
                 "titulo":"Token",
                 "descripcion":"BLABLALBLALBAl"
+                
             },
             {
                 "fondo":"ulr",
@@ -43,7 +49,7 @@ class Items extends React.Component {
                 "descripcion":"BLABLALBLALBAl"
             },
         ]
-
+/*
         const Itemes=[];
 
         for (let ite of sub_itemes) {
@@ -57,29 +63,98 @@ class Items extends React.Component {
                     </div>
                 </FullpageSection>
             )
-        }
+        } */
         return ( 
             <Fullpage>
                 <FullpageNavigation/>
                 <FullPageSections>
-                    
-                    <FullpageSection style={{height:'100vh'}}>
-                    <Player
-                    autoPlay='true'
-                    muted='true'
-                        playsInline
-                        poster="/assets/poster.png"
-                        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-                        />
-                        <div className="centrado_sub_item">
-                        <h1 style={{color:'red'}} className="Titulo_item">lala</h1>
-                        <p style={{color:"red"}} >
-                          LALALA
-                        </p>
-                    </div>
-                  
+                    <div className="">
+                    <FullpageSection style={{height:'100vh'}} className="video_responsive">
+
+                        <Player autoPlay={true}
+                                muted={true}
+                                playsInline
+                                poster="/assets/poster.png"
+                                src={video}
+                                loop={true}
+                                > 
+                       
+                        </Player>
+
+                        
+                             <p className="item_style">DESARROLLO BLOCKCHAIN</p>   
+                         
                     </FullpageSection>
-                    {Itemes}
+                    
+                    <FullpageSection style={{height:'100vh'}} className="video_responsive">
+
+                        <Player autoPlay={true}
+                                muted={true}
+                                playsInline
+                                poster="/assets/poster.png"
+                                src={video2}
+                                loop={true}
+                                > 
+                       
+                        </Player>
+
+                        
+                                
+                         <p className="item_style">AUTOMATIZACIÓN</p>
+                    </FullpageSection>
+                    
+                    <FullpageSection style={{height:'100vh'}} className="video_responsive">
+
+                        <Player autoPlay={true}
+                                muted={true}
+                                playsInline
+                                poster="/assets/poster.png"
+                                src={video3}
+                                loop={true}
+                                > 
+                       
+                        </Player>
+
+                        
+                                
+                         <p className="item_style">REALIDAD AUMENTADA</p>
+                    </FullpageSection>
+                    
+                    <FullpageSection style={{height:'100vh'}} className="video_responsive">
+
+                        <Player autoPlay={true}
+                                muted={true}
+                                playsInline
+                                poster="/assets/poster.png"
+                                src={video4}
+                                loop={true}
+                                > 
+                       
+                        </Player>
+
+                        
+                                
+                         <p className="item_style">REALIDAD VIRTUAL</p>
+                    </FullpageSection>
+                    
+                    <FullpageSection style={{height:'100vh'}} className="video_responsive">
+
+                        <Player autoPlay={true}
+                                muted={true}
+                                playsInline
+                                poster="/assets/poster.png"
+                                src={video5}
+                                loop={true}
+                                > 
+                       
+                        </Player>
+
+                        
+                                
+                         <p className="item_style">CONSULTORIAS</p>
+                    </FullpageSection>
+                   
+                  </div>
                 </FullPageSections>
             </Fullpage>
          );
