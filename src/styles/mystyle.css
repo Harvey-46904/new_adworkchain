@@ -113,6 +113,16 @@ body{
    font-size: 120px;
  }
 
+ .layer {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  left: 0;
+  top: 43%;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
 
 .quieto{
   top: 50%;

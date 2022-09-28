@@ -1,164 +1,115 @@
 import React from "react";
-import { Player } from 'video-react';
- import 'video-react/dist/video-react.css'; 
- import video from '../assets/videos/iron.mp4'
- import video2 from '../assets/videos/strange.mp4'
- import video3 from '../assets/videos/thanos.mp4'
- import video4 from '../assets/videos/spiderman.mp4'
- import video5 from '../assets/videos/thor.mp4'
-import Fullpage ,{FullPageSections,FullpageSection,FullpageNavigation}from "@ap.cx/react-fullpage";
+import { Player, ControlBar } from 'video-react';
+import 'video-react/dist/video-react.css';
+import ReactFullpage from '@fullpage/react-fullpage';
+import video from '../assets/videos/iron.mp4'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/mystyle.css'
+//import Fullpage ,{FullPageSections,FullpageSection,FullpageNavigation}from "@ap.cx/react-fullpage";
 class Items extends React.Component {
-  
-    render() { 
-/*
-        const sub_itemes=[
-            {
-                "fondo":"ulr",
-                "titulo":"Token",
-                "descripcion":"BLABLALBLALBAl"
-                
-            },
-            {
-                "fondo":"ulr",
-                "titulo":"NFT",
-                "descripcion":"BLABLALBLALBAl"
-            },
-            {
-                "fondo":"ulr",
-                "titulo":"DAPP",
-                "descripcion":"BLABLALBLALBAl"
-            },
-            {
-                "fondo":"ulr",
-                "titulo":"METAVERSO",
-                "descripcion":"BLABLALBLALBAl"
-            },
-            {
-                "fondo":"ulr",
-                "titulo":"SISTEMAS DESCENTRALIZADOS",
-                "descripcion":"BLABLALBLALBAl"
-            },
-            {
-                "fondo":"ulr",
-                "titulo":"WALLET",
-                "descripcion":"BLABLALBLALBAl"
-            },
-            {
-                "fondo":"ulr",
-                "titulo":"SMART CONTRACT",
-                "descripcion":"BLABLALBLALBAl"
-            },
-        ]
-/*
-        const Itemes=[];
 
-        for (let ite of sub_itemes) {
-            Itemes.push(
-                <FullpageSection style={{height:'100vh'}}>
-                  <div className="centrado_sub_item">
-                        <h1 style={{color:'black'}} className="Titulo_item">{ite.titulo}</h1>
-                        <p style={{color:"black"}} >
-                           {ite.descripcion}
-                        </p>
-                    </div>
-                </FullpageSection>
-            )
-        } */
-        return ( 
-            <Fullpage>
-                <FullpageNavigation/>
-                <FullPageSections>
-                    <div className="">
-                    <FullpageSection style={{height:'100vh'}} className="video_responsive">
-
-                        <Player autoPlay={true}
-                                muted={true}
-                                playsInline
-                                poster="/assets/poster.png"
-                                src={video}
-                                loop={true}
-                                > 
-                       
-                        </Player>
-
+    render() {
+        /*
+                const sub_itemes=[
+                    {
+                        "fondo":"ulr",
+                        "titulo":"Token",
+                        "descripcion":"BLABLALBLALBAl"
                         
-                             <p className="item_style">DESARROLLO BLOCKCHAIN</p>   
-                         
-                    </FullpageSection>
-                    
-                    <FullpageSection style={{height:'100vh'}} className="video_responsive">
+                    },
+                    {
+                        "fondo":"ulr",
+                        "titulo":"NFT",
+                        "descripcion":"BLABLALBLALBAl"
+                    },
+                    {
+                        "fondo":"ulr",
+                        "titulo":"DAPP",
+                        "descripcion":"BLABLALBLALBAl"
+                    },
+                    {
+                        "fondo":"ulr",
+                        "titulo":"METAVERSO",
+                        "descripcion":"BLABLALBLALBAl"
+                    },
+                    {
+                        "fondo":"ulr",
+                        "titulo":"SISTEMAS DESCENTRALIZADOS",
+                        "descripcion":"BLABLALBLALBAl"
+                    },
+                    {
+                        "fondo":"ulr",
+                        "titulo":"WALLET",
+                        "descripcion":"BLABLALBLALBAl"
+                    },
+                    {
+                        "fondo":"ulr",
+                        "titulo":"SMART CONTRACT",
+                        "descripcion":"BLABLALBLALBAl"
+                    },
+                ]
+        /*
+                const Itemes=[];
+        
+                for (let ite of sub_itemes) {
+                    Itemes.push(
+                        <FullpageSection style={{height:'100vh'}}>
+                          <div className="centrado_sub_item">
+                                <h1 style={{color:'black'}} className="Titulo_item">{ite.titulo}</h1>
+                                <p style={{color:"black"}} >
+                                   {ite.descripcion}
+                                </p>
+                            </div>
+                        </FullpageSection>
+                    )
+                } */
+        return (
+            <ReactFullpage
+                //fullpage options
+                licenseKey={'YOUR_KEY_HERE'}
+                scrollingSpeed={1000} /* Options here */
 
-                        <Player autoPlay={true}
-                                muted={true}
-                                playsInline
-                                poster="/assets/poster.png"
-                                src={video2}
-                                loop={true}
-                                > 
+                render={({ state, fullpageApi }) => {
+                    return (
+                        <ReactFullpage.Wrapper className="video_responsive">
+                          
+                          <div className="section  ">
+                                <Player
+                                    autoPlay={true}
+                                    muted={true}
+                                    playsInline
+                                    poster="/assets/poster.png"
+                                    src={video}
+                                    loop={true}
+                                  
+                                >
+                                <ControlBar disableCompletely={true} />
+                                <div className="layer"> <h1 className="text-danger text-center">Hola</h1></div>
                        
-                        </Player>
-
-                        
-                                
-                         <p className="item_style">AUTOMATIZACIÓN</p>
-                    </FullpageSection>
-                    
-                    <FullpageSection style={{height:'100vh'}} className="video_responsive">
-
-                        <Player autoPlay={true}
-                                muted={true}
-                                playsInline
-                                poster="/assets/poster.png"
-                                src={video3}
-                                loop={true}
-                                > 
+                                </Player>
+                               
+                            </div>  <div className="section  ">
+                                <Player
+                                    autoPlay={true}
+                                    muted={true}
+                                    playsInline
+                                    poster="/assets/poster.png"
+                                    src={video}
+                                    loop={true}
+                                  
+                                >
+                                <ControlBar disableCompletely={true} />
+                                <div className="layer"> <h1 className="text-danger text-center">Hola</h1></div>
                        
-                        </Player>
-
-                        
-                                
-                         <p className="item_style">REALIDAD AUMENTADA</p>
-                    </FullpageSection>
-                    
-                    <FullpageSection style={{height:'100vh'}} className="video_responsive">
-
-                        <Player autoPlay={true}
-                                muted={true}
-                                playsInline
-                                poster="/assets/poster.png"
-                                src={video4}
-                                loop={true}
-                                > 
-                       
-                        </Player>
-
-                        
-                                
-                         <p className="item_style">REALIDAD VIRTUAL</p>
-                    </FullpageSection>
-                    
-                    <FullpageSection style={{height:'100vh'}} className="video_responsive">
-
-                        <Player autoPlay={true}
-                                muted={true}
-                                playsInline
-                                poster="/assets/poster.png"
-                                src={video5}
-                                loop={true}
-                                > 
-                       
-                        </Player>
-
-                        
-                                
-                         <p className="item_style">CONSULTORIAS</p>
-                    </FullpageSection>
-                   
-                  </div>
-                </FullPageSections>
-            </Fullpage>
-         );
+                                </Player>
+                               
+                            </div>
+                        </ReactFullpage.Wrapper>
+                    );
+                }}
+            />
+        );
     }
 }
- 
+
 export default Items;
