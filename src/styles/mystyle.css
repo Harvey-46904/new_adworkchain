@@ -144,7 +144,7 @@ transform: translate(5%, -300%);
 }
 .video_responsive{
 
-  width: 1600px;
+  width: auto;
 
 }
 .video_responsive_nosotros{
