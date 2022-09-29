@@ -1,6 +1,6 @@
 import React from "react";
 import { Player } from 'video-react';
- import 'video-react/dist/video-react.css'; 
+import '../styles/video-react.css'; 
  import video from '../assets/videos/iron.mp4'
  import video2 from '../assets/videos/strange.mp4'
  import video3 from '../assets/videos/thanos.mp4'
@@ -69,7 +69,7 @@ class Items extends React.Component {
                 <FullpageNavigation/>
                 <FullPageSections>
                     <div className="">
-                    <FullpageSection style={{height:'100vh'}} className="video_responsive">
+                    <FullpageSection  style={{height:'100vh'}} >
 
                         <Player autoPlay={true}
                                 muted={true}
@@ -77,31 +77,65 @@ class Items extends React.Component {
                                 poster="/assets/poster.png"
                                 src={video}
                                 loop={true}
+                              
+                      
                                 > 
-                       
+                       <div  className=" container-fluid layer">
+                                        <div className="row justify-content-center">
+                                            <div className="col-md-8" >
+                                                    <div className=""> <h1 className=" text-center titulo_blockchain">TOKEN</h1></div>
+                                            </div>
+                                        </div>
+                                        <div className="row justify-content-center">
+                                            <div className="col-md-8">
+                                                            <h4 className="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempus nunc ex,
+                                                        vel sagittis risus gravida ac. Ut consequat accumsan facilisis. Orci varius natoque
+                                                        penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce id mauris
+                                                        id turpis ultricies hendrerit. Nulla tempor lectus eu dapibus feugiat. Phasellus
+                                                            interdum vestibulum mattis. Quisque aliquam tincidunt vestibulum. Donec vel condimentum
+                                                            lorem.</h4>
+                                            </div>                
+                                        </div>
+                                    </div>
                         </Player>
 
-                        
-                             <p className="item_style">DESARROLLO BLOCKCHAIN</p>   
+                          
                          
                     </FullpageSection>
                     
-                    <FullpageSection style={{height:'100vh'}} className="video_responsive">
+                    <FullpageSection  style={{height:'100vh'}} className="video_responsive" >
 
-                        <Player autoPlay={true}
-                                muted={true}
-                                playsInline
-                                poster="/assets/poster.png"
-                                src={video2}
-                                loop={true}
-                                > 
-                       
-                        </Player>
+<Player autoPlay={true}
+        muted={true}
+        playsInline
+        poster="/assets/poster.png"
+        src={video}
+        loop={true}
+       
 
-                        
-                                
-                         <p className="item_style">AUTOMATIZACIÓN</p>
-                    </FullpageSection>
+        > 
+<div  className=" container-fluid layer">
+                <div className="row justify-content-center">
+                    <div className="col-md-8" >
+                            <div className=""> <h1 className=" text-center titulo_blockchain">TOKEN</h1></div>
+                    </div>
+                </div>
+                <div className="row justify-content-center">
+                    <div className="col-md-8">
+                                    <h4 className="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempus nunc ex,
+                                vel sagittis risus gravida ac. Ut consequat accumsan facilisis. Orci varius natoque
+                                penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce id mauris
+                                id turpis ultricies hendrerit. Nulla tempor lectus eu dapibus feugiat. Phasellus
+                                    interdum vestibulum mattis. Quisque aliquam tincidunt vestibulum. Donec vel condimentum
+                                    lorem.</h4>
+                    </div>                
+                </div>
+            </div>
+</Player>
+
+  
+ 
+</FullpageSection>
                     
                     <FullpageSection style={{height:'100vh'}} className="video_responsive">
 

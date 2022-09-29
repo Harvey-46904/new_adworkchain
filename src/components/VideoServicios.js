@@ -1,6 +1,6 @@
 import React from "react";
 import { Player, ControlBar } from 'video-react';
-import 'video-react/dist/video-react.css'; 
+//import 'video-react/dist/video-react.css'; 
 import video from '../assets/videos/video_op.mp4'
 import "../styles/mystyle.css"
 

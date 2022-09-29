@@ -121,6 +121,17 @@ body{
 	display:inline-block;
 }
 
+.layer {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  left: 0;
+  top: 43%;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
 .fotox{
 
 width: 20%;
@@ -144,8 +155,9 @@ transform: translate(5%, -300%);
 }
 .video_responsive{
 
-  width: auto;
-
+  width: 100%;
+  height: auto;
+  background-size: cover;
 }
 .video_responsive_nosotros{
 
@@ -198,7 +210,6 @@ body::-webkit-scrollbar {
 }
 
 
-
 @media (min-width:720px){
   .footer {
       position: fixed;
@@ -230,7 +241,7 @@ body::-webkit-scrollbar {
 
    
 
-    width: 1920px;
+    width: 100%;
   
   }
 
