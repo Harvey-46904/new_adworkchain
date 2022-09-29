@@ -10,7 +10,7 @@ import { Player, ControlBar } from 'video-react';
  import ReactFullpage from '@fullpage/react-fullpage';
  import '../styles/mystyle.css'
 
-class DesarrolloBlockchain extends React.Component {
+class Sistematizacion extends React.Component {
     render() {
         /*
                 const sub_itemes=[
@@ -74,11 +74,9 @@ class DesarrolloBlockchain extends React.Component {
 
                 render={({ state, fullpageApi }) => {
                     return (
-                        <ReactFullpage.Wrapper className="video_responsive" data-autoplay={true}>
-                         
-                          <div onScroll={() => fullpageApi.setAllowScrolling(false)}
-                          className="section video_responsive " >
-
+                        <ReactFullpage.Wrapper className="video_responsive">
+                          
+                          <div className="section video_responsive ">
                                 <Player
                                     autoPlay={true}
                                     muted={true}
@@ -93,7 +91,7 @@ class DesarrolloBlockchain extends React.Component {
                                     <div  className=" container-fluid layer">
                                         <div className="row justify-content-center">
                                             <div className="col-md-8" >
-                                                    <div className=""> <h1 className=" text-center titulo_blockchain">TOKEN</h1></div>
+                                                    <div className=""> <h1 className=" text-center titulo_blockchain">ERP</h1></div>
                                             </div>
                                         </div>
                                         <div className="row justify-content-center">
@@ -125,7 +123,7 @@ class DesarrolloBlockchain extends React.Component {
                                 <div  className=" container-fluid layer">
                                         <div className="row justify-content-center">
                                             <div className="col-md-8" >
-                                                    <div className=""> <h1 className=" text-center titulo_blockchain">NFT</h1></div>
+                                                    <div className=""> <h1 className=" text-center titulo_blockchain">CMR</h1></div>
                                             </div>
                                         </div>
                                         <div className="row justify-content-center">
@@ -157,7 +155,7 @@ class DesarrolloBlockchain extends React.Component {
                                 <div  className=" container-fluid layer">
                                         <div className="row justify-content-center">
                                             <div className="col-md-8" >
-                                                    <div className=""> <h1 className=" text-center titulo_blockchain">DAPP</h1></div>
+                                                    <div className=""> <h1 className=" text-center titulo_blockchain">PAGINAS WEB</h1></div>
                                             </div>
                                         </div>
                                         <div className="row justify-content-center">
@@ -189,7 +187,7 @@ class DesarrolloBlockchain extends React.Component {
                                 <div  className=" container-fluid layer">
                                         <div className="row justify-content-center">
                                             <div className="col-md-8" >
-                                                    <div className=""> <h1 className=" text-center titulo_blockchain">METAVERSO</h1></div>
+                                                    <div className=""> <h1 className=" text-center titulo_blockchain">E-COMMERCE</h1></div>
                                             </div>
                                         </div>
                                         <div className="row justify-content-center">
@@ -221,7 +219,7 @@ class DesarrolloBlockchain extends React.Component {
                                 <div  className=" container-fluid layer">
                                         <div className="row justify-content-center">
                                             <div className="col-md-8" >
-                                                    <div className=""> <h1 className=" text-center titulo_blockchain">SISTEMAS DESCENTRALIZADOS</h1></div>
+                                                    <div className=""> <h1 className=" text-center titulo_blockchain">SOLUCIONES A LA MEDIDA</h1></div>
                                             </div>
                                         </div>
                                         <div className="row justify-content-center">
@@ -239,102 +237,6 @@ class DesarrolloBlockchain extends React.Component {
                                
                             </div>
 
-                            <div className="section  ">
-                                <Player
-                                    autoPlay={true}
-                                    muted={true}
-                                    playsInline
-                                    poster="/assets/poster.png"
-                                    src={video}
-                                    loop={true}
-                                  
-                                >
-                                <ControlBar disableCompletely={true} />
-                                <div  className=" container-fluid layer">
-                                        <div className="row justify-content-center">
-                                            <div className="col-md-8" >
-                                                    <div className=""> <h1 className=" text-center titulo_blockchain">WALLET</h1></div>
-                                            </div>
-                                        </div>
-                                        <div className="row justify-content-center">
-                                            <div className="col-md-8">
-                                                            <h4 className="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempus nunc ex,
-                                                        vel sagittis risus gravida ac. Ut consequat accumsan facilisis. Orci varius natoque
-                                                        penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce id mauris
-                                                        id turpis ultricies hendrerit. Nulla tempor lectus eu dapibus feugiat. Phasellus
-                                                            interdum vestibulum mattis. Quisque aliquam tincidunt vestibulum. Donec vel condimentum
-                                                            lorem.</h4>
-                                            </div>                
-                                        </div>
-                                    </div>
-                                </Player>
-                               
-                            </div>
-
-                            <div className="section  ">
-                                <Player
-                                    autoPlay={true}
-                                    muted={true}
-                                    playsInline
-                                    poster="/assets/poster.png"
-                                    src={video2}
-                                    loop={true}
-                                  
-                                >
-                                <ControlBar disableCompletely={true} />
-                                <div  className=" container-fluid layer">
-                                        <div className="row justify-content-center">
-                                            <div className="col-md-8" >
-                                                    <div className=""> <h1 className=" text-center titulo_blockchain">SMART CONTRACT</h1></div>
-                                            </div>
-                                        </div>
-                                        <div className="row justify-content-center">
-                                            <div className="col-md-8">
-                                                            <h4 className="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempus nunc ex,
-                                                        vel sagittis risus gravida ac. Ut consequat accumsan facilisis. Orci varius natoque
-                                                        penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce id mauris
-                                                        id turpis ultricies hendrerit. Nulla tempor lectus eu dapibus feugiat. Phasellus
-                                                            interdum vestibulum mattis. Quisque aliquam tincidunt vestibulum. Donec vel condimentum
-                                                            lorem.</h4>
-                                            </div>                
-                                        </div>
-                                    </div>
-                                </Player>
-                               
-                            </div>
-
-                            <div className="section ocultar ">
-                            
-                                <Player
-                                    autoPlay={true}
-                                    muted={true}
-                                    playsInline
-                                    poster="/assets/poster.png"
-                                    src={video2}
-                                    loop={true}
-                                  
-                                >
-                                <ControlBar disableCompletely={true} />
-                                <div  className=" container-fluid layer">
-                                        <div className="row justify-content-center">
-                                            <div className="col-md-8" >
-                                                    <div className=""> <h1 className=" text-center titulo_blockchain">SMART CONTRACT</h1></div>
-                                            </div>
-                                        </div>
-                                        <div className="row justify-content-center">
-                                            <div className="col-md-8">
-                                                            <h4 className="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempus nunc ex,
-                                                        vel sagittis risus gravida ac. Ut consequat accumsan facilisis. Orci varius natoque
-                                                        penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce id mauris
-                                                        id turpis ultricies hendrerit. Nulla tempor lectus eu dapibus feugiat. Phasellus
-                                                            interdum vestibulum mattis. Quisque aliquam tincidunt vestibulum. Donec vel condimentum
-                                                            lorem.</h4>
-                                            </div>                
-                                        </div>
-                                    </div>
-                                </Player>
-                               
-                            </div>
 
 
                         </ReactFullpage.Wrapper>
@@ -345,4 +247,4 @@ class DesarrolloBlockchain extends React.Component {
     }
 }
  
-export default DesarrolloBlockchain;
+export default Sistematizacion;
