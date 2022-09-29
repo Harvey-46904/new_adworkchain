@@ -1,6 +1,6 @@
 import React from "react";
 import { Player, ControlBar } from 'video-react';
- import 'video-react/dist/video-react.css'; 
+ //import 'video-react/dist/video-react.css'; 
  import video from '../assets/videos/iron.mp4'
  import video2 from '../assets/videos/strange.mp4'
  import video3 from '../assets/videos/thanos.mp4'
