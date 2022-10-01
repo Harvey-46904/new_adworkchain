@@ -1,6 +1,6 @@
 
-import React, { useRef, useState, Suspense } from 'react'
-import { Canvas,useLoader ,useFrame } from '@react-three/fiber'
+import React, { useRef, useState, Suspense,MathUtils } from 'react'
+import { Canvas,useLoader ,useFrame ,useThree } from '@react-three/fiber'
 import M1 from '../assets/img/cuarto/puerta.jpg'
 import M2 from '../assets/img/cuarto/pared.jpg'
 import M3 from '../assets/img/cuarto/galaxia.jpg'
@@ -10,7 +10,7 @@ import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import cursors from '../assets/img/nave.png'
 import cursors1 from '../assets/img/telescopio.png'
 import Model from '../components/Model'
-
+import {CameraShake} from '@react-three/drei'
 import * as THREE from 'three'
 // import { LoadingSpinner } from 'video-react'
 import { LoadingManager } from 'three'
@@ -49,28 +49,21 @@ function Box(props) {
 
 function Cuadro(){
   const [clicked,setClicked]=useState(false);
+  const [abrir,setabrir]=useState(false);
   const markedRef=useRef();
   const vec=new THREE.Vector3();
 
 
-    const mesh = useRef()
+  
     const colorMap = useLoader(TextureLoader, Mc)
     //useFrame((state, delta) => (mesh.current.rotation.z += 0.01))
 
 
-    useFrame(state=>{
-      if(clicked){
-        state.camera.lookAt(markedRef.current.position)
-        state.camera.position.lerp(vec.set(-3,20,-20),.01)
-        state.camera.updateProjectionMatrix()
-      }return null;
-    }
 
-    );
     return(
         <mesh
 
-        position={[-3,1, 0]}
+        position={[-3,1, 0.2]}
         ref={markedRef}
         onClick={() => setClicked(!clicked)}
         >
@@ -82,33 +75,62 @@ function Cuadro(){
   }
 
   function Puerta(){
-   // useFrame((state, delta) => (mesh.current.rotation.y += 0.01))
+  const [abrir,setabrir]=useState(false);
+  const [cerrar,setcerrar]=useState(false);
+
    let ref
    let pos
-   
-    
-    
-   pos=[0,-0.7, 0]
-    ref =group => group.rotateY(Math.PI/4)
-    pos=[0,-0.7, 0.59]
+  
    const mesh = useRef()
     const colorMap = useLoader(TextureLoader, M1)
+  // ref =group => group.rotateY(5*Math.PI/3)
+   //pos=[0.5,-0.7, 0.75]
+    useFrame((state) => {
+      if(abrir){
+        setTimeout(function(){
+          mesh.current.position.x=-0.5
+          mesh.current.position.y=-0.7
+          mesh.current.position.z=0.75
+          mesh.current.rotation.y = (5*Math.PI/3)
+        },200);
+       
+         // pos=[0.5,-0.7, 0.75]
+         return null;
+      }
+      if(!cerrar){
+        setTimeout(function(){
+        mesh.current.position.x=0
+        mesh.current.position.y=-0.7
+        mesh.current.position.z=0.1
+        mesh.current.rotation.y = (Math.PI)
+        },200);
+          return null;
+      }
+      
+    })
    
+
+    
     return(
       <group ref={ref}>
         <mesh
                 position={pos}
                 ref={mesh}
-                onPointerEnter={(e) => 
+                onPointerEnter={(e) => {
+                  setabrir(true)
                   document.body.style.cursor='url('+cursors+'), auto'
-               
+                }
                 } 
-                onPointerOut={(e) =>
+                onPointerOut={(e) =>{
+                  setabrir(false)
                   document.body.style.cursor='url('+cursors1+'), auto'
-                
-                } // see note 1
+                }
+                } 
                 >
+                
                     <boxGeometry args={[1.8,4,0.09]}  />
+                    <pointLight position={[0, -0.7, -0.05]} intensity={1} color="#fff" />
+                    <directionalLight color="white" intensity={0.1} position={[-1, -0.7, -8]} rotation={[0,0,0]}/>
                     <meshStandardMaterial map={colorMap} />
                 </mesh>
       </group>
@@ -133,14 +155,28 @@ function Cuadro(){
     );
   }
   function Galaxia(){
+    const [clicks,setClick]=useState(false);
+    const [clicked,setClicked]=useState(false);
     const mesh = useRef()
     const colorMap = useLoader(TextureLoader, M3)
-    //useFrame((state, delta) => (mesh.current.rotation.z += 0.01))
+    const vec=new THREE.Vector3();
+   
+    useFrame(state=>{
+      if(clicked){
+        state.camera.lookAt(mesh.current.position)
+        state.camera.position.lerp(vec.set(0,0,0),.03)
+        state.camera.updateProjectionMatrix()
+        window.open("http://localhost:3000/", "_self");
+      }
+      return null;
+    });
+
+    
     return(
         <mesh
-        position={[0,-0.7, 0]}
+        position={[0,-0.7, 0.06]}
         ref={mesh}
-       
+        onClick={() => setClicked(!clicked)}
       
         >
             <boxGeometry args={[1.8,4,0]}  />
@@ -151,18 +187,89 @@ function Cuadro(){
   function Pared(){
     const mesh = useRef()
     const colorMap = useLoader(TextureLoader, M2)
+    //mesh.current.rotation.y, (-state.mouse.x * Math.PI) / 6, 2.75, delta
+   //useFrame((state, delta) => void (mesh.current.rotation.y =(-state.mouse.x * Math.PI) ))
     //useFrame((state, delta) => (mesh.current.rotation.z += 0.01))
     return(
         <mesh
-        position={[0,0, 0]}
+        position={[0,0,  -0.3]}
         ref={mesh}
         >
-            <boxGeometry args={[13.99,7.7,0]}  />
+            <boxGeometry args={[13.99,9,0]}  />
             <meshStandardMaterial map={colorMap}/>
         </mesh>
  
     );
   }
+
+  function ParedD(){
+    const mesh = useRef()
+    const colorMap = useLoader(TextureLoader, M2)
+    //mesh.current.rotation.y, (-state.mouse.x * Math.PI) / 6, 2.75, delta
+   //useFrame((state, delta) => void (mesh.current.rotation.y =(-state.mouse.x * Math.PI) ))
+    //useFrame((state, delta) => (mesh.current.rotation.z += 0.01))
+
+    let ref
+    let pos
+     ref =group => group.rotateY(5*Math.PI/3)
+   pos=[5,-0.1, -4]
+    return(
+      <group ref={ref}>
+        <mesh
+       position={pos}
+      
+        ref={mesh}
+        >
+              <boxGeometry args={[5,8,0]}  />
+            <meshStandardMaterial map={colorMap}/>
+        </mesh>
+       </group>
+    );
+  }
+
+  function ParedI(){
+    const mesh = useRef()
+    const colorMap = useLoader(TextureLoader, M2)
+    let ref
+    let pos
+     ref =group => group.rotateY(Math.PI/4)
+   pos=[-7,-0.1, -5]
+    return(
+      <group ref={ref}>
+        <mesh
+       position={pos}
+      
+        ref={mesh}
+        >
+               <boxGeometry args={[5,8,0]}  />
+            <meshStandardMaterial map={colorMap}/>
+        </mesh>
+       </group>
+    );
+  }
+
+  function Suelo(){
+    const mesh = useRef()
+    const colorMap = useLoader(TextureLoader, M2)
+    let ref
+    let pos
+     ref =group => group.rotateX(Math.PI/4)
+   pos=[-7,-0.1, -5]
+    return(
+      <group ref={ref}>
+        <mesh
+       position={pos}
+      
+        ref={mesh}
+        >
+               <boxGeometry args={[5,8,0]}  />
+            <meshStandardMaterial map={colorMap}/>
+        </mesh>
+       </group>
+    );
+  }
+
+
 
   
  
@@ -178,15 +285,24 @@ function Cuadro(){
   }
  
 
-
-
+// 05 01 04
+function Rig() {
+  const [vec] = useState(() => new THREE.Vector3())
+  const { camera, mouse } = useThree()
+  useFrame(() => camera.position.lerp(vec.set(mouse.x * 0.5, 0, 5), 0.01))
+  return <CameraShake maxYaw={0.01} maxPitch={0.01} maxRoll={0.01} yawFrequency={0.5} pitchFrequency={0.5} rollFrequency={0.4} />
+}
 return(
   <Canvas style={{height:'100vh'}}>
    
-     <ambientLight intensity={0.5} />
-            <ambientLight intensity={0.1} />
-            <directionalLight intensity={0.4} />
+     <ambientLight intensity={0.2} />
+            <ambientLight intensity={0.05} />
+            <directionalLight intensity={0.05} />
+           <Rig/>
      <Pared/>
+     <ParedD/>
+     <ParedI/>
+     <Suelo/>
      <Marco/>
      <Galaxia/>
      <Puerta/>
